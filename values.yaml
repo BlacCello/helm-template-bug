@@ -4,7 +4,6 @@ child:
       "test1": null
       "test2": null
       "test3": "important-annotation"
-    enabled: true
     rules:
       - host: host.local
         http:

@@ -1,5 +1,4 @@
 ingressExtern:
-  enabled: false
   annotations: {}
   rules: {}
 
