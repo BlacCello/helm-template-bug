@@ -1,0 +1,18 @@
+child:
+  ingress:
+    annotations:
+      "test1": null
+      "test2": null
+      "test3": "important-annotation"
+    enabled: true
+    rules:
+      - host: host.local
+        http:
+          paths:
+            - path: /
+              backend:
+                service:
+                  name: test
+                  port:
+                    number: 8080
+              pathType: Prefix

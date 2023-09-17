@@ -1,0 +1,9 @@
+ingressExtern:
+  enabled: false
+  annotations: {}
+  rules: {}
+
+global:
+  ingress:
+    annotations:
+      ingress.kubernetes.io/rewrite-target: "/$1"

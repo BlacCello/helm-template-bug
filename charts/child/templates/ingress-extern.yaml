@@ -1,0 +1,19 @@
+{{ if .Values.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test
+  annotations:
+  {{- range $key, $value := .Values.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+  {{- $annotations := .Values.ingress.annotations }}
+  {{- range $key, $value := .Values.global.ingress.annotations }}
+    {{- if not (index $annotations $key) }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  rules:
+{{ toYaml .Values.ingress.rules | indent 2 }}
+{{- end }}
